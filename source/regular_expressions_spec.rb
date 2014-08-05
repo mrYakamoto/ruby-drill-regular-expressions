@@ -45,8 +45,8 @@ end
 
 describe 'format_ssns' do
   it "should find and reformat any SSNs in the string" do
-    expect(format_ssns("234601422, 350.80.0744, 013-60-8762"))
-      .to eq("234-60-1422, 350-80-0744, 013-60-8762")
+    expect(format_ssns("234601422, 350.80.0744, 013-60-8762 and 444--33--2222"))
+      .to eq("234-60-1422, 350-80-0744, 013-60-8762 and 444-33-2222")
   end
 
   it "should not alter a string without SSNs in it" do
