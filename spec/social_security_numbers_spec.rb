@@ -1,56 +1,64 @@
 require_relative('../social_security_numbers')
 
 describe 'has_ssn?' do
-  it "should return true if it has what looks like an SSN" do
-    expect(has_ssn?("please don't share this: 234-60-1422")).to be(true)
+  it 'returns true if it finds an SSN' do
+    expect(has_ssn?('The number is 234-60-1422')).to be true
   end
 
-  it "should return false if it doesn't have an SSN" do
-    expect(has_ssn?("please don't share this: XXX-XX-1422")).to be(false)
+  it 'returns false if it does not find an SSN' do
+    expect(has_ssn?('The number is XXX-XX-1422')).to be false
   end
 end
 
 describe 'grab_ssn' do
-  it "should return an SSN if the string has an SSN" do
-    expect(grab_ssn("please don't share this: 234-60-1422")).to eq("234-60-1422")
+  it 'returns an SSN if it finds an SSN' do
+    ssn = grab_ssn('The number is 234-60-1422')
+    expect(ssn).to eq '234-60-1422'
   end
 
-  it "should return nil if the string doesn't have an SSN" do
-    expect(grab_ssn("please confirm your identity: XXX-XX-1422")).to be(nil)
+  it 'returns the first SSN it finds' do
+    ssn = grab_ssn('The numbers are 350-80-0744, 234-60-1422, and 013-60-8762')
+    expect(ssn).to eq '350-80-0744'
+  end
+
+  it 'returns an empty string if it does not find an SSN' do
+    ssn = grab_ssn('The number is XXX-XX-1422')
+    expect(ssn).to eq String.new('')
   end
 end
 
 describe 'grab_all_ssns' do
-  it "should return all SSNs if the string has any SSNs" do
-    expect(grab_all_ssns("234-60-1422, 350-80-0744, 013-60-8762"))
-      .to eq(["234-60-1422", "350-80-0744", "013-60-8762"])
+  it 'returns a collection of all the SSNs if it finds any SSNs' do
+    all_ssns = grab_all_ssns('The numbers are 350-80-0744, 234-60-1422, and 013-60-8762')
+    expect(all_ssns).to match_array ['350-80-0744', '234-60-1422', '013-60-8762']
   end
 
-  it "should return an empty Array if it doesn't have any SSNs" do
-    expect(grab_all_ssns("please confirm your identity: XXX-XX-1422")).to eq([])
+  it 'returns an empty collection if does not find any SSNs' do
+    all_ssns = grab_all_ssns('The number is XXX-XX-1422')
+    expect(all_ssns).to be_empty
   end
 end
 
 describe 'hide_all_ssns' do
-  it "should obfuscate any SSNs in the string" do
-    expect(hide_all_ssns("234-60-1422, 350-80-0744, 013-60-8762"))
-      .to eq("XXX-XX-1422, XXX-XX-0744, XXX-XX-8762")
+  it 'obfuscates any SSNs it finds' do
+    hidden_ssns = hide_all_ssns('The numbers are 350-80-0744, 234-60-1422, and 013-60-8762')
+    expect(hidden_ssns).to eq 'The numbers are XXX-XX-0744, XXX-XX-1422, and XXX-XX-8762'
   end
 
-  it "should not alter a string without SSNs in it" do
-    example = "please confirm your identity: XXX-XX-1422"
-    expect(hide_all_ssns(example)).to eq(example)
+  it 'returns its input if it finds no SSNs' do
+    input = 'The number is XXX-XX-1422'
+    expect(hide_all_ssns(input)).to eq input
   end
 end
 
 describe 'format_ssns' do
-  it "should find and reformat any SSNs in the string" do
-    expect(format_ssns("234601422, 350.80.0744, 013-60-8762 and 444--33--2222"))
-      .to eq("234-60-1422, 350-80-0744, 013-60-8762 and 444-33-2222")
+  it 'formats any SSNs it finds' do
+    formatted_ssns = format_ssns('The numbers are 350800744, 234.60.1422, and 013--60--8762')
+    expect(formatted_ssns).to eq 'The numbers are 350-80-0744, 234-60-1422, and 013-60-8762'
   end
 
-  it "should not alter a string without SSNs in it" do
-    example = "please confirm your identity: 44211422"
-    expect(format_ssns(example)).to eq(example)
+  it 'returns its input if it finds no SSNs' do
+    input = 'The number is XXX-XX-1422'
+    expect(format_ssns(input)).to eq input
   end
 end
