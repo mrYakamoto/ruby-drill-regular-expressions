@@ -22,15 +22,7 @@ We'll be writing our code in the file `social_security_numbers.rb`.  A handful o
 
 
 ### Release 0: Identifying a Social Security Number
-```ruby
-has_ssn?('The number is 234-60-1422')
-# => true
-has_ssn?('The number is XXX-XX-1422')
-# => false
-```
-*Figure 1*. The `has_ssn?` method report whether a string contains a social security number.
-
-In this challenge we'll be working with Social Security Numbers.  We'll begin by reporting whether or not we can find a social security number in a given string.  Let's build out the method `has_ssn?` so that it returns `true` if a given string contains a social security number and `false` otherwise (see Figure 1).
+In this challenge we'll be working with Social Security Numbers.  We'll begin by reporting whether or not we can find a social security number in a given string.  Let's build out the method `has_ssn?` so that it returns `true` if a given string contains a social security number and `false` otherwise.
 
 How will we define what a Social Security Number looks like?  Is there a pattern to the way they're written?  Which string methods seem appropriate for such matching?  If we need to, we should browse the `String` class [docs](http://www.ruby-doc.org/core-1.9.3/String.html) to find an appropriate method.
 
