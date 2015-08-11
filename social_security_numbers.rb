@@ -1,23 +1,24 @@
-# Hey! You'll probably want to look at the tests in `social_security_numbers_spec.rb`
-# to see examples of what your code should and shouldn't do
+# Look at the tests in `spec/social_security_numbers_spec.rb`
+# to see a description of how these methods should behave.
 
-# Determine whether a string contains a Social Security number.
+
+# Determine whether a string contains a Social Security Number.
 def has_ssn?(string)
 end
 
-# Return the Social Security number from a string.
+# Find and return a Social Security Number.
 def grab_ssn(string)
 end
 
-# Return all of the Social Security numbers from a string.
+# Find and return all Social Security Numbers.
 def grab_all_ssns(string)
 end
 
-# Obfuscate all of the Social Security numbers in a string. Example: XXX-XX-4430.
+# Obfuscate all Social Security Numbers. Example: XXX-XX-4430.
 def hide_all_ssns(string)
 end
 
-# Ensure all of the Social Security numbers use dashes for delimiters.
-# Example: 480.01.4430 and 480014430 would both be 480-01-4430.
+# Format all Social Security Numbers to use single dashes for delimiters:
+# '480014430', '480.01.4430', and '480--01--4430' would all be formatted '480-01-4430'.
 def format_ssns(string)
 end
