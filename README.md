@@ -40,4 +40,4 @@ Read through the test suite and add additional tests to make us feel more comfor
 
 
 ## Conclusion
-Did a user register for our site with what appears to be a real e-mail address?  What about a real phone number?  Can we find all of the links in that HTML?  Regular expressions and the string methods that utilize them are powerful tools.  Being comfortable with them and knowing when its appropriate to use them will help us write concise, readable code when dealing with text.
+Did a user register for our site with what appears to be a real e-mail address?  What about a real phone number?  Can we find all of the links in that HTML?  Regular expressions and the string methods that utilize them are powerful tools.  Being comfortable with them and knowing when it's appropriate to use them will help us write concise, readable code when dealing with text.
