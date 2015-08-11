@@ -1,4 +1,4 @@
-# Hey! You'll probably want to look at the tests in `regular_expressions_spec.rb`
+# Hey! You'll probably want to look at the tests in `social_security_numbers_spec.rb`
 # to see examples of what your code should and shouldn't do
 
 # Determine whether a string contains a Social Security number.

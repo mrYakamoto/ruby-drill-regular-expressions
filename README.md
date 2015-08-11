@@ -18,7 +18,7 @@ As you work through the exercises of this challenge, we recommend you use [http:
 
 ###Release 0
 
-* Use the tests in `source/regular_expressions_spec.rb` to guide you to a solution
+* Use the tests in `source/social_security_numbers_spec.rb` to guide you to a solution
 * Add additional tests to make you feel more comfortable with your implementation. For instance, what happens when you pass a string with only a single SSN into the `hide_all_ssns` or `get_all_ssns`  methods?
 * Did adding tests help you solve the challenge more effectively? How? Add and commit a file called `tests.md` with your thoughts.
 
