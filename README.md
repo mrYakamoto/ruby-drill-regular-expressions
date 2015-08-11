@@ -22,12 +22,12 @@ We'll be writing our code in the file `social_security_numbers.rb`.  A handful o
 
 
 ### Release 0: Identifying a Social Security Number
-In this challenge we'll be working with Social Security Numbers.  We'll begin by reporting whether or not we can find a social security number in a given string.  Let's build out the method `has_ssn?` so that it returns `true` if a given string contains a social security number and `false` otherwise.
+In this challenge we'll be working with Social Security Numbers.  We'll begin by reporting whether or not we can find a social security number in a given string.  Let's build out the method `has_ssn?` so that it returns `true` if a given string contains a social security number and `false` otherwise (see the tests).
 
 How will we define what a Social Security Number looks like?  Is there a pattern to the way they're written?  Which string methods seem appropriate for such matching?  If we need to, we should browse the `String` class [docs](http://www.ruby-doc.org/core-1.9.3/String.html) to find an appropriate method.
 
 
-### Release 1: Beyond Identification
+### Release 1: The Other Methods
 We'll now define the rest of the methods until all of the tests pass.  For each of the methods we'll be writing, there is a specific string method that will help us to achieve the behavior defined by the tests.  Let's read through the docs and select the most appropriate methods we can find.
 
 
