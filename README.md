@@ -32,7 +32,7 @@ We'll now define the rest of the methods until all of the tests pass.  For each 
 
 
 ### Release 2: Improve Test Coverage
-Tests provide us with valuable feedback on whether or not our methods are behaving as we expect.  However, sometimes our code works only as well as our tests.  
+Tests provide us with valuable feedback on whether or not our methods are behaving as we expect.  However, sometimes our code works only as well as our tests.
 
 As we were working through the methods in this challenge, we encountered the `format_ssns` method which requires us to match Social Security Numbers in different formats:  *123456789*, *123.45.6789*, and *123--45--6789*.  However, the tests for our `has_ssn?` method only test that the method finds Social Security Numbers in the format *123-45-6789*.  Is that acceptable, or should it also find Social Security Numbers in other formats?
 
