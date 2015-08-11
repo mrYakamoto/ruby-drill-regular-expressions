@@ -1,4 +1,4 @@
-require_relative('regular_expressions')
+require_relative('../regular_expressions')
 
 describe 'has_ssn?' do
   it "should return true if it has what looks like an SSN" do
