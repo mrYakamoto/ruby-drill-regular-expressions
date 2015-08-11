@@ -15,13 +15,37 @@ Sometimes we think that we've defined a regular expression to match a specific p
 
 We can also refer to the [Pickaxe Guide](http://www.ruby-doc.org/docs/ProgrammingRuby/html/language.html#UJ) or this [regular expressions overview](http://www.bluebox.net/about/blog/2013/02/using-regular-expressions-in-ruby-part-1-of-3/) if we get stuck.
 
-##Releases
 
-###Release 0
+## Releases
+### Pre-release:  Organization
+We'll be writing our code in the file `social_security_numbers.rb`.  A handful of empty method definitions have been provided, and we'll build each of these methods out during this challenge.  Tests for each method have been provided in the file `spec/social_security_numbers_spec.rb`.
 
-* Use the tests in `source/social_security_numbers_spec.rb` to guide you to a solution
-* Add additional tests to make you feel more comfortable with your implementation. For instance, what happens when you pass a string with only a single SSN into the `hide_all_ssns` or `get_all_ssns`  methods?
-* Did adding tests help you solve the challenge more effectively? How? Add and commit a file called `tests.md` with your thoughts.
+
+### Release 0: Identifying a Social Security Number
+```ruby
+has_ssn?('The number is 234-60-1422')
+# => true
+has_ssn?('The number is XXX-XX-1422')
+# => false
+```
+*Figure 1*. The `has_ssn?` method report whether a string contains a social security number.
+
+In this challenge we'll be working with Social Security Numbers.  We'll begin by reporting whether or not we can find a social security number in a given string.  Let's build out the method `has_ssn?` so that it returns `true` if a given string contains a social security number and `false` otherwise (see Figure 1).
+
+How will we define what a Social Security Number looks like?  Is there a pattern to the way they're written?  Which string methods seem appropriate for such matching?  If we need to, we should browse the `String` class [docs](http://www.ruby-doc.org/core-1.9.3/String.html) to find an appropriate method.
+
+
+### Release 1: Beyond Identification
+We'll now define the rest of the methods until all of the tests pass.  For each of the methods we'll be writing, there is a specific string method that will help us to achieve the behavior defined by the tests.  Let's read through the docs and select the most appropriate methods we can find.
+
+
+### Release 2: Improve Test Coverage
+Tests provide us with valuable feedback on whether or not our methods are behaving as we expect.  However, sometimes our code works only as well as our tests.  
+
+As we were working through the methods in this challenge, we encountered the `format_ssns` method which requires us to match Social Security Numbers in different formats:  *123456789*, *123.45.6789*, and *123--45--6789*.  However, the tests for our `has_ssn?` method only test that the method finds Social Security Numbers in the format *123-45-6789*.  Is that acceptable, or should it also find Social Security Numbers in other formats?
+
+Read through the test suite and add additional tests to make us feel more comfortable that our methods are behaving the way we want.  For instance, what do we want to happen when we pass a string with only a single Social Security Number into the `hide_all_ssns` or `get_all_ssns` methods?
+
 
 ##Resources
 
