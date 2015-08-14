@@ -1,7 +1,7 @@
 # String Matching with Regular Expressions
 
 ## Summary
-In this challenge we'll be working with Ruby's [`String`](http://www.ruby-doc.org/core-1.9.3/String.html) and [`Regexp`](http://ruby-doc.org/core-1.9.3/Regexp.html) classes.  More specifically, we'll be searching strings for specific patterns of characters, which we'll be defining as regular expressions.
+In this challenge we'll be working with Ruby's [`String`](http://ruby-doc.org/core-2.1.0/String.html) and [`Regexp`](http://ruby-doc.org/core-1.9.3/Regexp.html) classes.  More specifically, we'll be searching strings for specific patterns of characters, which we'll be defining as regular expressions.
 
 The Ruby `String` class defines over 100 public methods that give Ruby programmers remarkable power to process, manipulate, and transform textual data.  About a dozen of these string methods can be used with regular expressions in order to allow for high-powered string matching.
 
