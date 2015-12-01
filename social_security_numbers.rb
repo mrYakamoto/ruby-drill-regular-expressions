@@ -36,14 +36,19 @@ end
 # Format all Social Security Numbers to use single dashes for delimiters:
 # '480014430', '480.01.4430', and '480--01--4430' would all be formatted '480-01-4430'.
 def format_ssns(string)
-  ssns = string.scan(/\d{3}\D*\d{2}\D*\d{4}/)
-  format_array.map! { |ssn| ssn.gsub(/\D/, "") }
-  format_array.map! { |ssn| ssn.slice(0,3).concat("-").concat(ssn.slice(3,2).concat("-").concat(ssn.slice(5,4)))}
-  format_array.each { |ssn| string = string.gsub(/\d{3}\D*\d{2}\D*\d{4}/, ssn) }
-  return string
 
+  string_arr = string.split(' ')
+  string_arr.map! {|element|
+    if element.scan(/\d{3}\D*\d{2}\D*\d{4}/).length != 0
+          element = element.gsub(/\D*[.-]/, "")
+          element.sub(/\d{9}/,element.slice(0,3).concat("-").concat(element.slice(3,2).concat("-").concat(element.slice(5,4))))
+    else
+      element
+    end
+  }
+  string_arr.join(' ')
 end
 
 # p has_ssn?('This is 232-56-1253')
 # p hide_all_ssns('This is 232-56-1253 fyrnhgh 234-56-34')
-p format_ssns('This is 232-...56-----1253 fyrnhgh 234----.56....,,-3433')
+# p format_ssns('This is 111-...11-----1111, the other ssn 222----.22....,,-2222')
